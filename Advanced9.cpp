@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	for(;;)
+	{
+		int d=0,m=0,s=0;
+		printf("please enter a date(mm/):");
+		scanf("%d/%d",&m,&d);
+		if ((d<=0||m<=0||d>31||m>12||((m==4||m==6||m==9||m==11)&&d>30)||(m==2&&d>29)))
+			printf("Error,please enter a suitable date.\n");
+		else
+		{
+			s=(m*2+d)%3;
+			if (s==0)
+			{
+				printf("%d/%d is 'ordinary'.\n",m,d);
+				break;
+			}
+			else if (s==1)
+			{
+				printf("%d/%d is 'lucky'.\n",m,d);
+				break;
+			}
+			else
+			{
+				printf("%d/%d is 'great luck'.\n",m,d);
+				break;
+			}
+		
+		}
+	}
+	system("pause");
+	return 0;
+}
